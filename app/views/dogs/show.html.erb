@@ -1,0 +1,18 @@
+<br>
+<h2 align='center'><u>Here is <%= @d.name %>'s Awesome Page!</u></h2>
+<br>
+<p>Breed: <%= @d.breed %></p>
+<p>Age: <%= @d.age %></p>
+<u>List of employees whose heart this dog has captured</u>:
+<br>
+<% if @d.employees.empty? %>
+    <p>&emsp;No Employees have fallen prey... yet...</p>
+<% else %>
+    <ul>
+        <% @d.employees.each do |e| %>
+            <li>
+                <%= link_to e.full_name, employee_path(e) %>
+            </li>
+        <% end %>
+    </ul>
+<% end %>

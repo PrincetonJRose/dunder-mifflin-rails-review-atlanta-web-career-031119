@@ -1,0 +1,21 @@
+<br>
+<h2 class="ui center aligned icon header" align='center'>
+    <i class="circular users icon"></i>
+        <u>List of Employees</u>
+</h2>
+<br>
+<%= link_to 'Add Employee', new_employee_path %>
+<br>
+<ul>
+    <% @employees.each do |e| %>
+        <% if e.alias != 'none' %>
+            <li>
+                <%= link_to "#{e.full_name}", employee_path(e) %> aka <%= e.alias %>
+            </li>
+        <% else %>
+            <li>
+                <%= link_to "#{e.full_name}", employee_path(e) %>
+            </li>
+        <% end %>
+    <% end %>
+</ul>

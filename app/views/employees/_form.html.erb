@@ -1,0 +1,42 @@
+<br>
+<% if @e.errors.any? %>
+    <div id="error_explanation">
+    <h3 style="color: red">There were some errors with the information you entered into the form:</h2>
+    <ul>
+        <% @e.errors.full_messages.each do |message| %>
+        <li>
+            <p style="color:red"><%= message %></p>
+        </li>
+        <% end %>
+    </ul>
+    </div>
+    <br>
+<% end %>
+
+<br>
+<p><u>Enter Employee Information</u>:</p>
+<%= form_for @e do |f| %>
+    <%= f.label "First name:" %>
+    <%= f.text_field :first_name %>
+    <br>
+    <%= f.label "Last name:" %>
+    <%= f.text_field :last_name %>
+    <br>
+    <%= f.label "Alias:" %>
+    <%= f.text_field :alias %>
+    <br>
+    <%= f.label "Position:" %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label "Office:" %>
+    <%= f.text_field :office %>
+    <br>
+    <%= f.label "Image:" %>
+    <%= f.text_field :img_url %>
+    <br>
+    <br>
+    <%= f.label "Pick a cute dog!" %>
+    <%= f.collection_select :dog_id, Dog.all, :id, :name, prompt: true %>
+    <br><br>
+    <%= f.submit "Click here to create!" %>
+<% end %>

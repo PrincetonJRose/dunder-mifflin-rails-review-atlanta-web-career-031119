@@ -1,0 +1,8 @@
+<br>
+<h2 align='center'><u>Welcome to <%= @e.full_name %>'s Page</u></h2>
+<%= image_tag @e.img_url %>
+<br>
+<p>Known alias: <%= @e.alias %></p>
+<p>Office: <%= @e.office %></p>
+<p>Position: <%= @e.title %></p>
+<p>Favorite dog: <%= link_to @e.dog.name, dog_path(@e.dog) %></p>

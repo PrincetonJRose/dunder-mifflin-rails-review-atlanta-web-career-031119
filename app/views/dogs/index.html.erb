@@ -1,0 +1,10 @@
+<h2 class="ui center aligned icon header" align='center'>
+        <u>List of Cute Adorable & Lovable Dogs!!!</u>
+</h2>
+<ul>
+    <% @dogs.each do |d| %>
+        <li>
+            <%= link_to d.name, dog_path(d) %>
+        </li>
+    <% end %>
+</ul>
