@@ -1,7 +1,7 @@
 <br>
 <% if @e.errors.any? %>
     <div id="error_explanation">
-    <h3 style="color: red">There were some errors with the information you entered into the form:</h2>
+    <h3 style="color: red">There were some errors with the information you entered:</h3>
     <ul>
         <% @e.errors.full_messages.each do |message| %>
         <li>

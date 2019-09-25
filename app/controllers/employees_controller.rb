@@ -21,6 +21,10 @@ class EmployeesController < ApplicationController
         end
     end
 
+    def edit
+        @e = Employee.find_by(id: params[:id])
+    end
+
     private
 
     def e_params
